@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`guestbook-ui.lab.local`) && PathPrefix(`/`)
+    - match: Host(`guestbook-prd.lab.local`) && PathPrefix(`/`)
       kind: Rule
       priority: 1
       services:
