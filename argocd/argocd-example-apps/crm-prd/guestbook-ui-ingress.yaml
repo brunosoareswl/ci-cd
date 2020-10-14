@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: guestbook-ui
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`guestbook-ui.lab.local`) && PathPrefix(`/`)
+      kind: Rule
+      priority: 1
+      services:
+      - name: guestbook-ui
+        port: 80
